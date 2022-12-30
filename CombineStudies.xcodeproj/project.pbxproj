@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23001C1D295F6BBA00A5F00B /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23001C1C295F6BBA00A5F00B /* ItemsViewModel.swift */; };
 		232E9DC4295F2AF2009EE50A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E9DC3295F2AF2009EE50A /* AppDelegate.swift */; };
 		232E9DC6295F2AF2009EE50A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E9DC5295F2AF2009EE50A /* SceneDelegate.swift */; };
 		232E9DC8295F2AF2009EE50A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E9DC7295F2AF2009EE50A /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23001C1C295F6BBA00A5F00B /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		232E9DC0295F2AF2009EE50A /* CombineStudies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CombineStudies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		232E9DC3295F2AF2009EE50A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		232E9DC5295F2AF2009EE50A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		232E9DC2295F2AF2009EE50A /* CombineStudies */ = {
 			isa = PBXGroup;
 			children = (
+				233BF801295F73D700C09A13 /* ItemsViewModel */,
 				232E9DC3295F2AF2009EE50A /* AppDelegate.swift */,
 				232E9DC5295F2AF2009EE50A /* SceneDelegate.swift */,
 				232E9DC7295F2AF2009EE50A /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				232E9DE6295F2AF4009EE50A /* CombineStudiesUITestsLaunchTests.swift */,
 			);
 			path = CombineStudiesUITests;
+			sourceTree = "<group>";
+		};
+		233BF801295F73D700C09A13 /* ItemsViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				23001C1C295F6BBA00A5F00B /* ItemsViewModel.swift */,
+			);
+			path = ItemsViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			files = (
 				232E9DC8295F2AF2009EE50A /* ViewController.swift in Sources */,
 				232E9DC4295F2AF2009EE50A /* AppDelegate.swift in Sources */,
+				23001C1D295F6BBA00A5F00B /* ItemsViewModel.swift in Sources */,
 				232E9DC6295F2AF2009EE50A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
