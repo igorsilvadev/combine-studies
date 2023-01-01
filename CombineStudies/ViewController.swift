@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
     
     lazy var viewModel = ItemsViewModel()
     
@@ -32,40 +32,45 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     private var cancellables = Set<AnyCancellable>()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
         setupLayout()
+        setupObservables()
+        setupAppearance()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
-        setupObservables()
         
     }
     
-    func addViews() {
+    private func addViews() {
         view.addSubview(tableView)
         view.addSubview(addButton)
     }
     
-    func setupLayout() {
+    private func setupAppearance() {
+        view.backgroundColor = .white
+    }
+    
+    private func setupLayout() {
         NSLayoutConstraint.activate(
-        [
-            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            addButton.widthAnchor.constraint(equalToConstant: 100),
-            addButton.heightAnchor.constraint(equalToConstant: 50),
-            addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor)
-        ])
+            [
+                addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+                addButton.widthAnchor.constraint(equalToConstant: 100),
+                addButton.heightAnchor.constraint(equalToConstant: 50),
+                addButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                tableView.bottomAnchor.constraint(equalTo: addButton.topAnchor)
+            ])
         
         
     }
     
-    func setupObservables() {
+    private func setupObservables() {
         viewModel.items.sink { [weak self] _ in
             self?.tableView.reloadData()
             if !(self?.viewModel.items.value.isEmpty ?? true) {
@@ -79,6 +84,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     @objc func addItem() {
         viewModel.addItem()
     }
+    
+}
+
+extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.items.value.count
@@ -96,6 +105,5 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell
     }
-    
 }
 
