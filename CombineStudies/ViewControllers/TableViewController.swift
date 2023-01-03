@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import Combine
 
-class ViewController: UIViewController {
+class TableViewController: UIViewController {
     
     lazy var viewModel = ItemsViewModel()
     
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource {
+extension TableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.items.value.count
