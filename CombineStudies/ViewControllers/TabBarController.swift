@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    private lazy var viewModel: ItemsViewModel = ItemsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,10 +20,10 @@ class TabBarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let tableViewController = TableViewController()
+        let tableViewController = TableViewController(viewModel: viewModel)
         let tabOneBarItem = UITabBarItem(title: "Table View", image: UIImage(systemName: "list.bullet"), tag: 1)
         
-        let textFieldViewController = TextFieldViewController()
+        let textFieldViewController = TextFieldViewController(viewModel: viewModel)
         let tabTwoBarItem = UITabBarItem(title: "TextField", image: UIImage(systemName: "rectangle.and.pencil.and.ellipsis"), tag: 2)
         
         tableViewController.tabBarItem = tabOneBarItem
