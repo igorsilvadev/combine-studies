@@ -15,12 +15,11 @@ struct Item {
 class ItemsViewModel {
     
     var items = CurrentValueSubject<[Item], Never>([])
-    
-    
+    var textContent = CurrentValueSubject<String, Never>("")
     
     func addItem() {
-        items.value.append(Item(name: "\(Int.random(in: 0...100))")) 
+        let item = Item(name: "\(Int.random(in: 0...100))")
+        items.value.append(item)
+        textContent.value = item.name
     }
-    
-    
 }

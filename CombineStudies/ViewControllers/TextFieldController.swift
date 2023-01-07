@@ -30,7 +30,18 @@ class TextFieldViewController: UIViewController {
         return label
     }()
     
+    private var viewModel: ItemsViewModel
+    
     private var cancellables = Set<AnyCancellable>()
+    
+    init(viewModel: ItemsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +79,14 @@ class TextFieldViewController: UIViewController {
     }
     
     private func setupObservables() {
+        
         textField.textPublisher.sink { [weak self] text in
             self?.label.text = text
         }.store(in: &cancellables)
+        
+        viewModel.textContent.sink { [weak self] newText in
+            self?.label.text = newText
+        }.store(in: &cancellables)
+        
     }
 }

@@ -11,7 +11,7 @@ import Combine
 
 class TableViewController: UIViewController {
     
-    lazy var viewModel = ItemsViewModel()
+    private var viewModel: ItemsViewModel
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -31,6 +31,15 @@ class TableViewController: UIViewController {
     }()
     
     private var cancellables = Set<AnyCancellable>()
+    
+    init(viewModel: ItemsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
