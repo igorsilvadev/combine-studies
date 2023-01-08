@@ -88,5 +88,9 @@ class TextFieldViewController: UIViewController {
             self?.label.text = newText
         }.store(in: &cancellables)
         
+        viewModel.backgroundColor.sink { [weak self] newBackgroundColor in
+            self?.view.backgroundColor = newBackgroundColor
+        }.store(in: &cancellables)
+        
     }
 }

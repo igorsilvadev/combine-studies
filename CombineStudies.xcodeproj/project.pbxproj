@@ -19,6 +19,7 @@
 		23B065452963ACD8006E73D7 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B065442963ACD8006E73D7 /* TabBarController.swift */; };
 		23B065482963AE91006E73D7 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B065472963AE91006E73D7 /* TextFieldController.swift */; };
 		23B0654C2963B4B4006E73D7 /* TextField+TextPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B0654B2963B4B4006E73D7 /* TextField+TextPublisher.swift */; };
+		23BA7C0D296A421F00515969 /* PickerColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BA7C0C296A421F00515969 /* PickerColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		23B065442963ACD8006E73D7 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		23B065472963AE91006E73D7 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
 		23B0654B2963B4B4006E73D7 /* TextField+TextPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+TextPublisher.swift"; sourceTree = "<group>"; };
+		23BA7C0C296A421F00515969 /* PickerColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				232E9DC7295F2AF2009EE50A /* TableViewController.swift */,
 				23B065442963ACD8006E73D7 /* TabBarController.swift */,
 				23B065472963AE91006E73D7 /* TextFieldController.swift */,
+				23BA7C0C296A421F00515969 /* PickerColorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				23B065482963AE91006E73D7 /* TextFieldController.swift in Sources */,
 				23B065452963ACD8006E73D7 /* TabBarController.swift in Sources */,
 				232E9DC6295F2AF2009EE50A /* SceneDelegate.swift in Sources */,
+				23BA7C0D296A421F00515969 /* PickerColorViewController.swift in Sources */,
 				23B0654C2963B4B4006E73D7 /* TextField+TextPublisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
