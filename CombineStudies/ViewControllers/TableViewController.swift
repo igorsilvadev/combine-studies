@@ -87,6 +87,11 @@ class TableViewController: UIViewController {
             }
         }.store(in: &cancellables)
         
+        viewModel.backgroundColor.sink { [weak self] newBackgroundColor in
+            self?.view.backgroundColor = newBackgroundColor
+            self?.tableView.backgroundColor = newBackgroundColor
+        }.store(in: &cancellables)
+        
         addButton.addTarget(self, action: #selector(addItem), for: .touchUpInside)
     }
     

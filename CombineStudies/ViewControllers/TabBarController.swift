@@ -21,15 +21,19 @@ class TabBarController: UITabBarController {
         super.viewWillAppear(animated)
         
         let tableViewController = TableViewController(viewModel: viewModel)
-        let tabOneBarItem = UITabBarItem(title: "Table View", image: UIImage(systemName: "list.bullet"), tag: 1)
+        let tabFirstBarItem = UITabBarItem(title: "Table View", image: UIImage(systemName: "list.bullet"), tag: 1)
         
         let textFieldViewController = TextFieldViewController(viewModel: viewModel)
-        let tabTwoBarItem = UITabBarItem(title: "TextField", image: UIImage(systemName: "rectangle.and.pencil.and.ellipsis"), tag: 2)
+        let tabSecondBarItem = UITabBarItem(title: "TextField", image: UIImage(systemName: "rectangle.and.pencil.and.ellipsis"), tag: 2)
         
-        tableViewController.tabBarItem = tabOneBarItem
-        textFieldViewController.tabBarItem = tabTwoBarItem
+        let pickerColorViewController = PickerColorViewController(viewModel: viewModel)
+        let tabThirdBarItem = UITabBarItem(title: "Picker Color", image: UIImage(systemName: "paintpalette.fill"), tag: 3)
         
-        self.viewControllers = [tableViewController, textFieldViewController]
+        tableViewController.tabBarItem = tabFirstBarItem
+        textFieldViewController.tabBarItem = tabSecondBarItem
+        pickerColorViewController.tabBarItem = tabThirdBarItem
+        
+        self.viewControllers = [tableViewController, textFieldViewController, pickerColorViewController]
     }
     
 }
