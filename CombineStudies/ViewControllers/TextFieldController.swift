@@ -81,16 +81,15 @@ class TextFieldViewController: UIViewController {
     private func setupObservables() {
         
         textField.textPublisher.sink { [weak self] text in
-            self?.label.text = text
+            self?.viewModel.textContent.value = text
         }.store(in: &cancellables)
         
-        viewModel.textContent.sink { [weak self] newText in
-            self?.label.text = newText
-        }.store(in: &cancellables)
         
         viewModel.backgroundColor.sink { [weak self] newBackgroundColor in
             self?.view.backgroundColor = newBackgroundColor
         }.store(in: &cancellables)
+        
+        viewModel.textContent.map { $0 }.assign(to: \.text, on: label).store(in: &cancellables)
         
     }
 }
